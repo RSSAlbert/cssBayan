@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    background-color: #e47096;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0 0 5px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+/* MEME */
+.wrap {
+    margin: 0 auto 30px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #00d9ce;
+    transition: color .2s;
+}
+
+/* item */
+
+
+hr {
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+.tupieshutki:active {
+    color: #00d9d9;
+    transform: scale(0.97);
+}
+
+.tupieshutki:hover {
+    cursor: pointer;
+
+}
+
+.meme:hover {
+    color: black;
+}
+
+.meme-title {
+    padding: 25px 0 0 0;
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+img {
+    margin-top: 15px;
+    width: 0;
+    height: 0;
+    transition: 0.5s;
+}
+
+.tupieshutki::after {
+    content: "";
+    display: none;
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-left: 1px;
+    transform: translateY(-25%);
+}
+
+.input {
+    width: 0;
+    height: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+.membox {
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    animation: shows 1s;
+    justify-content: center;
+    display: flex;
+    transition: 0.5s;
+}
+
+/* slow animation for content */
+@keyframes shows {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* visible content */
+.membox:checked {
+    width: 100%;
+    height: 415px;
+}
+
+.input:checked~.membox {
+    width: 100%;
+    height: 415px;
+    transition: 0.3s;
+}
+
+.tupieshutki:hover>.membox {
+    width: 100%;
+    height: 415px;
+    transition: 0.3s;
+}
+
+.input:checked~.meme-title {
+    color: black;
+    transition: 0.3s;
+}
+
+.tupieshutki:hover>.membox>img {
+    width: 400px;
+    height: 400px;
+    transition: 0.3s;
+}
+
+.input:checked~.membox>img {
+    width: 400px;
+    height: 400px;
+    transition: 0.3s;
+}
+
+/* icons */
+.input:checked~.meme-title:after {
+    border-style: solid;
+    border-width: 0 5px 10px 5px;
+    border-color: transparent transparent black transparent;
+    transition: .3s;
+}
+
+.tupieshutki:hover>.meme-title:after {
+    border-style: solid;
+    border-width: 0 5px 10px 5px;
+    border-color: transparent transparent black transparent;
+    transition: .3s;
+}
+
+.meme:hover>.meme-item>.meme-title::after {
+    display: block;
+}
+
+@media screen and (max-width: 820px) {
+    body {
+        max-width: 790px;
+    }
+
+    .wrap {
+        margin: 0 20px 30px 20px;
+        font-size: 20px;
+        color: black;
+    }
+
+    .head-hr {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    h1 {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 40px;
+    }
+
+    .meme-title::after {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .tupieshutki:hover>.membox>img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .input:checked~.membox>img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .membox:checked {
+        height: 365px;
+    }
+
+    .input:checked~.membox {
+        height: 365px;
+    }
+
+    .tupieshutki:hover>.membox {
+        height: 365px;
+    }
+
+}
+
+@media screen and (max-width: 390px) {
+    .tupieshutki:hover>.membox>img {
+        width: 290px;
+        height: 290px;
+        transition: 0.3s;
+    }
+
+    .input:checked~.membox>img {
+        width: 290px;
+        height: 290px;
+        transition: 0.3s;
+    }
+
+    .membox:checked {
+        height: 305px;
+    }
+
+    .input:checked~.membox {
+        height: 305px;
+    }
+
+    .tupieshutki:hover>.membox {
+        height: 305px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .wrap {
+        margin: 0 10px 30px 10px;
+        font-size: 15px;
+    }
+
+    .head-hr {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    h1 {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+
+    hr {
+        margin-top: 10px;
+    }
+
+    .meme-title {
+        padding: 10px 0 0 0;
+    }
+
+    img {
+        margin-top: 10px;
+    }
+}
